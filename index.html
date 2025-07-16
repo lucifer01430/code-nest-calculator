@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<!-- Basic Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Calculator | CodeNest</title>
+<meta name="description" content="A stylish and fully functional calculator built with HTML, CSS, JavaScript, and Bootstrap. Includes dark/light mode, animations, and advanced math functions.">
+
+<!-- Open Graph Meta (for social media sharing) -->
+<meta property="og:title" content="Professional Calculator | CodeNest">
+<meta property="og:description" content="A sleek calculator with dark/light mode toggle and advanced features by Harsh Pandey.">
+<meta property="og:image" content="https://yourdomain.com/calculator-thumbnail.png"> <!-- replace with actual image URL -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/calculator"> <!-- replace with actual URL -->
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Professional Calculator | CodeNest">
+<meta name="twitter:description" content="An elegant calculator with light/dark mode and math functions by Harsh Pandey.">
+<meta name="twitter:image" content="https://yourdomain.com/calculator-thumbnail.png"> <!-- replace with actual image -->
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+<link rel="shortcut icon" href="favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Calculator" />
+<link rel="manifest" href="favicon/site.webmanifest" />
+
+<!-- Author & Keywords -->
+<meta name="author" content="Harsh Pandey">
+<meta name="keywords" content="calculator, professional calculator, html calculator, bootstrap calculator, dark mode calculator, CodeNest, Harsh Pandey">
+
+<!-- Theme color -->
+<meta name="theme-color" content="#ffffff">
+
+
+  <!-- Bootstrap & Font -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Theme Toggle -->
+  <button id="themeToggle" title="Toggle Theme">🌙</button>
+
+  <!-- Calculator -->
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="row g-2 mb-2">
+      <div class="col-3"><button class="btn btn-custom btn-clear w-100" onclick="clearDisplay()">C</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-function w-100" onclick="sqrt()">√</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-function w-100" onclick="square()">x²</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-operator w-100" onclick="append('/')">÷</button></div>
+    </div>
+    <div class="row g-2 mb-2">
+      <div class="col-3"><button class="btn btn-info btn-custom w-100" onclick="memoryClear()">MC</button></div>
+      <div class="col-3"><button class="btn btn-info btn-custom w-100" onclick="memoryRecall()">MR</button></div>
+      <div class="col-3"><button class="btn btn-info btn-custom w-100" onclick="memoryAdd()">M+</button></div>
+      <div class="col-3"><button class="btn btn-info btn-custom w-100" onclick="memorySubtract()">M-</button></div>
+    </div>
+    <div class="row g-2 mb-2">
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('7')">7</button></div>
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('8')">8</button></div>
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('9')">9</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-operator w-100" onclick="append('*')">×</button></div>
+    </div>
+    <div class="row g-2 mb-2">
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('4')">4</button></div>
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('5')">5</button></div>
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('6')">6</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-operator w-100" onclick="append('-')">-</button></div>
+    </div>
+    <div class="row g-2 mb-2">
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('1')">1</button></div>
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('2')">2</button></div>
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('3')">3</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-operator w-100" onclick="append('+')">+</button></div>
+    </div>
+    <div class="row g-2 mb-2">
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('0')">0</button></div>
+      <div class="col-3"><button class="btn btn-light btn-custom w-100" onclick="append('.')">.</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-function w-100" onclick="append('%')">%</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-function w-100" onclick="append('(')">(</button></div>
+    </div>
+    <div class="row g-2 mb-2">
+      <div class="col-3"><button class="btn btn-custom btn-function w-100" onclick="append(')')">)</button></div>
+      <div class="col-6"><button class="btn btn-light btn-custom w-100" onclick="backspace()">❌</button></div>
+      <div class="col-3"><button class="btn btn-custom btn-equal w-100" onclick="calculate()">=</button></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p class="mb-0 small">Designed & Developed with <i class="text-danger">❤</i> by 
+      <a href="https://lucifer01430.github.io/Portfolio/" target="_blank">Harsh Pandey</a>
+    </p>
+  </footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
